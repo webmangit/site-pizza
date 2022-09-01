@@ -1,0 +1,63 @@
+@import '../../../scss/data/variables.scss';
+
+.sort {
+  position: relative;
+  display: inline-block;
+  margin-left: 20px;
+  padding-bottom: 10px;
+  @media (max-width: 768px) {
+    margin-left: 0;
+  }
+}
+
+.sortLabel {
+  display: flex;
+  align-items: center;
+  img {
+    margin-right: 8px;
+    &.active {
+      transform: rotate(180deg);
+    }
+  }
+  .sortSpanOne {
+    margin-right: 8px;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+  .sortSpanTwo {
+    color: $effectColor;
+    border-bottom: 1px dashed $effectColor;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+}
+
+.sortPopup {
+  position: absolute;
+  z-index: 1;
+  right: 0;
+  background: #ffffff;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.09);
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 10px 0;
+  margin-top: 15px;
+
+  ul {
+    overflow: hidden;
+    li {
+      padding: 12px 20px;
+      cursor: pointer;
+
+      &.active,
+      &:hover {
+        background: rgba(254, 95, 30, 0.05);
+      }
+
+      &.active {
+        font-weight: 700;
+        color: $effectColor;
+      }
+    }
+  }
+}

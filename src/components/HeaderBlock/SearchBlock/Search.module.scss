@@ -1,0 +1,40 @@
+.search {
+  position: relative;
+  svg {
+    position: absolute;
+    top: 50%;
+    transform: translate(0px, -50%);
+    transition: all 0.2s ease 0s;
+  }
+  .svgSearch {
+    left: 15px;
+    width: 22px;
+    height: 22px;
+    circle, line {
+      stroke: rgba(123, 123, 123, 0.3);
+    }
+  }
+  .svgClose {
+    right: 15px;
+    width: 16px;
+    height: 16px;
+    fill: rgba(123, 123, 123, 0.3);
+    cursor: pointer;
+    &:hover {
+      fill: rgba(123, 123, 123, 0.8);
+    }
+  }
+
+  input {
+    // display: none;
+    padding: 12px 15px 12px 42px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    &:focus {
+      border: 1px solid rgba(0, 0, 0, 0.2);
+    }
+  }
+  @media(max-width: 768px) {
+    display: none;
+  }
+}

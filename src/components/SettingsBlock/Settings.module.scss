@@ -1,0 +1,11 @@
+@import '../../scss/data/mixins.scss';
+
+.settings {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @include adaptive-value('margin-bottom', 40, 30);
+  @media (max-width: 768px) {
+    display: block;
+  }
+}

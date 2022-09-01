@@ -1,0 +1,43 @@
+@import './data/variables';
+@import './libs/reset';
+@import './data/mixins';
+
+
+body {
+  font-family: 'Nunito', sans-serif;
+  background-color: $background;
+  color: #2C2C2C;
+  line-height: 1.2;
+  font-size: 16px;
+  @include adaptive-value("padding", 50, 0);
+  @media (max-width: 768px) {
+    padding: 0;
+  }
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; 
+  min-height: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  border-radius: 10px;
+  background-color: #ffffff;
+  
+  @media (max-width: 768px) {
+    border-radius: 0;
+  }
+}
+
+main {
+  flex: 1 1 auto;
+  @include adaptive-value("padding-left", 50, 15);
+  @include adaptive-value("padding-right", 50, 15);
+}
+
+@media (max-width: 768px) {
+  html {
+    height: 100%;
+  }
+}

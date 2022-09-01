@@ -1,0 +1,63 @@
+@import '../../../scss/data/mixins.scss';
+@import '../../../scss/data/variables.scss';
+
+// Пустая корзина -----------------------------------------------------------
+.cartEmpty {
+  text-align: center;
+  max-width: 750px;
+  margin: 0 auto;
+  padding: 20;
+  h1 {
+    font-weight: 700;
+    @include adaptive-value('font-size', 32, 26);
+    margin-bottom: 10px;
+    color: #000000;
+  }
+  p {
+    margin-bottom: 40px;
+  }
+
+  .cartEmptyImg {
+    position: relative;
+    margin: 0 auto;
+    padding-bottom: 34%;
+    max-width: 300px;
+    min-height: 255px;
+    @include adaptive-value('margin-bottom', 74, 40);
+    img {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      height: 100%;
+      object-fit: cover;
+      transform: translate(-50%, 0px)
+    }
+  }
+  .description {
+    @include adaptive-value('font-size', 22, 18);
+  }
+
+  .button {
+    display: inline-block;
+    align-items: center;
+    padding: 10px 20px;
+    border-radius: 30px;
+    text-align: center;
+    cursor: pointer;
+    background: #232323;
+    @include noselect();
+    transition: all 0.3s ease 0s;
+    @include adaptive-value('margin-bottom', 160, 60);
+    span {
+      color: #FFFFFF;
+      font-weight: 700;
+    }
+    &:hover {
+      background-color: lighten($color: #232323, $amount: 10);
+    }
+    &:active {
+      background-color: darken(#232323, 12%);
+      transform: translateY(1px);
+    }
+  }
+}

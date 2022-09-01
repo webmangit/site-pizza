@@ -1,0 +1,27 @@
+@import '../../scss/data/mixins.scss';
+
+.pizzas {
+  @include adaptive-value('margin-bottom', 96, 50)
+}
+.pizzasTitle {
+  font-weight: 700;
+  @include adaptive-value('font-size', 32, 26);
+  @include adaptive-value('margin-bottom', 35, 20)
+}
+.pizzasItems {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  @include adaptive-value('column-gap', 30, 15);
+  @include adaptive-value('row-gap', 40, 20);
+  @include adaptive-value('margin-bottom', 55, 40);
+  @media (max-width: 1200px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @media (max-width: 980px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (max-width: 540px) {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 40px;
+  }
+}

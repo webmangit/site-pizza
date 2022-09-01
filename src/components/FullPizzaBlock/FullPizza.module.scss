@@ -1,0 +1,34 @@
+@import '../../scss/data/mixins.scss';
+
+.pizza {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-bottom: 40px;
+  @media (max-width: 540px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.pizzaImg {
+  img {
+    max-width: 100%;
+  }
+}
+
+.pizzaContent {
+  h1 {
+    font-weight: 700;
+    @include adaptive-value('font-size', 32, 26);
+    @include adaptive-value('margin-bottom', 35, 20)
+  }
+  div {
+    @include adaptive-value('font-size', 22, 18);
+    margin-bottom: 10px;
+  }
+
+  span {
+    font-weight: 700;
+  }
+
+}

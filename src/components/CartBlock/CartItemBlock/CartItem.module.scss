@@ -1,0 +1,151 @@
+@import '../../../scss/data/mixins.scss';
+@import '../../../scss/data/variables.scss';
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+  .pizza {
+    display: flex;
+    align-items: center;
+    .image {
+      position: relative;
+      width: 80px;
+      height: 80px;
+      margin-right: 15px;
+      img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    .title {
+      @include adaptive-value('font-size', 22, 18);
+      font-weight: 700;
+      color: #000000;
+    }
+    .description {
+      @include adaptive-value('font-size', 18, 16);
+      color: #8D8D8D;
+    }
+    @media (max-width: 768px) {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  }
+
+  .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+    @media(max-width: 768px) {
+      width: auto;
+    }
+  }
+
+  .counter {
+    display: flex;
+    align-items: center;
+    button {
+      width: 32px;
+      height: 32px;
+      border-radius: 50px;
+      position: relative;
+      background: #FFFFFF;
+      transition: all 0.3s ease 0s;
+      cursor: pointer;
+    }
+
+    span {
+      @include adaptive-value('font-size', 22, 18);
+      font-weight: 700;
+      color: #000000;
+      margin: 0 12px;
+    }
+    svg {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .counterMinus {
+      border: 2px solid #D7D7D7;
+    }
+    .counterPlus {
+      border: 2px solid $effectColor;
+      svg {
+        path {
+          fill: $effectColor;
+          transition: all 0.3s ease 0s;
+        }
+      }
+      &:hover {
+        background-color: $effectColor;
+        border: none;
+        svg {
+          path {
+            fill: #FFFFFF;
+          }
+        }
+      }
+      &:active {
+        background-color: darken($effectColor, 8%);
+        transform: translateY(1px);
+      }
+    }
+    @media (max-width: 768px) {
+      margin-right: 30px;
+      ;
+    }
+  }
+  .price {
+    @include adaptive-value('font-size', 22, 18);
+    font-weight: 700;
+    color: #000000;
+    @media (max-width: 768px) {
+      margin-right: 30px;
+      ;
+    }
+  }
+  .delete {
+    width: 32px;
+    height: 32px;
+    border: 2px solid #D7D7D7;
+    border-radius: 50px;
+    position: relative;
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    svg {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(45deg);
+      path {
+        fill: #D0D0D0;
+        transition: all 0.3s ease 0s;
+      }
+    }
+    &:hover {
+      background-color: #232323;
+      border: none;
+      svg {
+        path {
+          fill: #FFFFFF;
+        }
+      }
+    }
+    &:active {
+      background-color: darken(#232323, 12%);
+      transform: translateY(1px);
+    }
+  }
+  @media (max-width: 768px) {
+    justify-content: flex-start;
+  }
+}

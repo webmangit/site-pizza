@@ -1,0 +1,138 @@
+@import '../../scss/data/mixins.scss';
+@import '../../scss/data/variables.scss';
+
+
+
+.button {
+  display: inline-block;
+  align-items: center;
+  padding: 10px 20px;
+  border-radius: 30px;
+  text-align: center;
+  cursor: pointer;
+  @include noselect();
+  transition: all 0.3s ease 0s;
+}
+
+// Заполненная корзина -----------------------------------------------------------
+.cartNonempty {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 20px;
+  padding-top: 84px;
+  padding-bottom: 130px;
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    .title {
+      display: flex;
+      align-items: center;
+      img {
+        margin-right: 16px;
+      }
+      h1 {
+        font-weight: 700;
+        @include adaptive-value('font-size', 32, 26);
+        color: #000000;
+      }
+    }
+    .reset {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      svg {
+        margin-right: 7px;
+        path {
+          stroke: #B6B6B6;
+          transition: all 0.3s ease 0s;
+        }
+        @media (max-width: 480px) {
+          margin-right: 0;
+        }
+      }
+      span {
+        color: #B6B6B6;
+        transition: all 0.3s ease 0s;
+        @media (max-width: 480px) {
+          display: none;
+        }
+      }
+      &:hover {
+        svg {
+          path {
+            stroke: #2C2C2C;
+          }
+        }
+        span {
+          color: #2C2C2C;
+        }
+      }
+    }
+
+  }
+  .body {
+    padding: 30px 0px;
+    border-top: 1px solid #F4F4F4;
+  }
+  .result {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    @include adaptive-value('font-size', 22, 18);
+    color: #000000;
+    span {
+      font-weight: 700;
+      @media (max-width: 480px) {
+        display: inline-block;
+        margin-bottom: 15px;
+      }
+    }
+    strong {
+      font-weight: 700;
+      color: $effectColor;
+    }
+    @media (max-width: 480px) {
+      flex-direction: column;
+    }
+  }
+
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .buttonLeft {
+      background-color: #FFFFFF;
+      color: #CACACA;
+      border: 1px solid #D3D3D3;
+      transition: all 0.3s ease-in-out 0s;
+      &:hover {
+        background-color: darken(#232323, 8%);
+        color: #FFFFFF;
+      }
+      &:active {
+        background-color: darken(#232323, 12%);
+        transform: translateY(1px);
+      }
+      @media (max-width: 480px) {
+        margin-bottom: 20px;
+      }
+    }
+    .buttonRight {
+      background-color: $effectColor;
+      color: #FFFFFF;
+      &:hover {
+        background-color: darken($effectColor, 8%);
+      }
+      &:active {
+        background-color: darken($effectColor, 12%);
+        transform: translateY(1px);
+      }
+    }
+    @media (max-width: 480px) {
+      flex-direction: column;
+    }
+  }
+}

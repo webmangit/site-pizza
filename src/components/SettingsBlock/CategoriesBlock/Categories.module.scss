@@ -1,0 +1,36 @@
+@import '../../../scss/data/_mixins.scss';
+
+.categories {
+  display: flex;
+  overflow: auto;
+  padding-bottom: 10px;
+  li {
+    background-color: #f9f9f9;
+    padding: 13px 30px;
+    border-radius: 30px;
+    font-weight: 700;
+    cursor: pointer;
+    letter-spacing: 0.015em;
+    transition: all 0.2s ease 0s;
+    @include noselect();
+    &:hover {
+      background-color: darken(#f9f9f9, 2%);
+    }
+
+    &:active {
+      background-color: darken(#f9f9f9, 5%);
+    }
+
+    &.active {
+      background-color: #282828;
+      color: #fff;
+    }
+  }
+  :not(:last-child) {
+    margin-right: 10px;
+  }
+  @media (max-width: 768px) {
+    margin-bottom: 20px;
+  }
+}
+
